@@ -20,9 +20,7 @@ isdir(SRCDIR) && rm(SRCDIR; recursive=true, force=true)
 run(`git clone --depth 1 --branch=$(REPO_REF) $(REPO_URL) $(SRCDIR)`)
 
 cd(SRCDIR) do
-    if !isfile("configure")
-        run(`autoreconf -fi`)
-    end
+    run(`autoreconf -fvi`)
     run(`./configure --enable-shared --disable-static CFLAGS=-O3\ -fPIC --prefix=$(PREFIX)`)
     run(`make -j$(Sys.CPU_THREADS) ACLOCAL=aclocal AUTOMAKE=automake AUTOCONF=autoconf`)
     run(`make install ACLOCAL=aclocal AUTOMAKE=automake AUTOCONF=autoconf`)
