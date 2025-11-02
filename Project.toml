@@ -1,0 +1,19 @@
+name = "MiniCUDD"
+uuid = "f651bf88-bff9-4849-92de-6dc1717c3072"
+authors = ["Hiroyuki Okamura <okamu@hiroshima-u.ac.jp>"]
+version = "0.1.0"
+description = "A lightweight Julia wrapper for the CUDD BDD library (libcudd)."
+license = "MIT"
+repository = "https://github.com/JuliaReliab/MiniCUDD.jl"
+
+[deps]
+Libdl = "8f399da3-3557-5675-b5ff-fb832c97cbdb"
+
+[compat]
+julia = "1.10"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
